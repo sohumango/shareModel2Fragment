@@ -1,0 +1,21 @@
+ref : https://tutorial.eyehunts.com/android/share-data-between-fragments-used-viewmodel-example/
+1. for use ViewModelProviders
+    add app gradle 
+    dependencies {
+        ....
+        implementation "android.arch.lifecycle:extensions:1.1.0"
+        implementation "android.arch.lifecycle:viewmodel:1.1.0"
+    }
+2. to use layout_centerInParent should be call in RelativeLayout
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <Button
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+3. null exception => create view by Super class
+    public View onCreateView
+        View view = inflater.inflate(R.layout.fragment_sender,container,false);
